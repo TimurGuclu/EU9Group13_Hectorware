@@ -7,7 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
-                //"pretty",
+                "json:target/cucumber.json",
+                "pretty",
                 "html:target/cucumber-report.html",
                 "rerun:target/rerun.txt",
 //                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
@@ -15,8 +16,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/Hectorware/stepDefinitions",
         dryRun = false,
-        tags = "",      // unique tag names, leave blank
-        publish = false
+        tags = "@HECW-391"      // unique tag names, leave blank
+        //publish = false
 
 )
 public class MyRunner {
