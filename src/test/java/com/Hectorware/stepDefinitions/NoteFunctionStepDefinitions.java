@@ -27,8 +27,8 @@ public class NoteFunctionStepDefinitions {
     }
     @Then("user should verify writeable  field is displayed")
     public void user_should_verify_writeable_field_is_displayed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        System.out.println("hello world");
     }
 
 }
