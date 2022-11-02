@@ -12,32 +12,34 @@ import org.openqa.selenium.support.FindBy;
 public class ProfileSettings_StepDefs {
     LoginPageHalim login = new LoginPageHalim();
 
-    @Given("the user succesfully login in")
-    public void user_navigates_to_the_url() {
+    @Given("the user tries to successfully login in")
+    public void the_user_tries_to_successfully_login_in() {
         Driver.getDriver().get("https://qa.hectorware.com/index.php/login");
     }
 
-    @Given("the user succesfully login in")
-    public void user_enters_valid_credentials() {
-        //login.username.click();
+    @When("types the correct login data")
+    public void types_the_correct_login_data() {
+        login.username.click();
         login.username.sendKeys("Employee1");
-        //login.password.click();
+        login.password.click();
         login.password.sendKeys("Employee123");
+        login.LoginButton.click();
+
     }
 
     @FindBy(id = "expand")
     public WebElement MenuToggle;
 
     @When("User clicks on profile the dropdown is displayed")
-    public void userclicksonprofile() {
+    public void user_clicks_on_profile() {
         this.MenuToggle.click();
     }
 
     @FindBy(id = "settings")
     public WebElement Settings;
 
-    @And("cliking on Settings displays the profile")
-    public void userclicksonsettings() {
+    @And("clicking on Settings displays the profile")
+    public void user_clicks_on_settings() {
         this.Settings.click();
     }
 
@@ -45,20 +47,21 @@ public class ProfileSettings_StepDefs {
     public WebElement DisplayName;
     @FindBy(id = "phone")
     public WebElement PhoneNumber;
-    @FindBy(id = "languageinput")
-    public WebElement Language;
     @FindBy(id = "email")
     public WebElement Email;
-    @FindBy(id ="address")
+    @FindBy(id = "address")
     public WebElement Address;
 
     @Then("User can edit the profile of the account")
-    public void usercanseepersonalinfo() {
-    this.DisplayName.getText();
-    this.PhoneNumber.getText();
-    this.Email.getText();
-    this.Language.getText();
-    this.Address.getText();
+    public void user_can_see_personal_information() {
+        this.DisplayName.click();
+        this.DisplayName.sendKeys("Salih Akyilmaz");
+        this.PhoneNumber.click();
+        this.PhoneNumber.sendKeys("+43123456789");
+        this.Email.click();
+        this.Email.sendKeys("salihTestCase@Cydeo.com");
+        this.Address.click();
+        this.Address.sendKeys("Burger King next to the park");
     }
 
 }
