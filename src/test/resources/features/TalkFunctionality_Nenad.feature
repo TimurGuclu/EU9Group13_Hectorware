@@ -11,3 +11,15 @@ Feature: Talk Functionality
 		Given user is successfully logged in on Hectorware dashboard
 		When user clicks on Talk functionality button
 		Then Verify all conversation lists are displayed
+
+
+	@HECW-400
+	Scenario: Talk Functionality - test case 2
+		Given user is successfully logged in on Hectorware dashboard
+		When user clicks on Talk functionality button
+		And user clicks on plus sign to create new conversation
+		And user enters "avengersConversation"
+		And user clicks on AddParticipants button
+		And user selects participants he or she wants to add
+		And user clicks Create conversation button
+		Then verify "avengersConversation" is created under the talk module
