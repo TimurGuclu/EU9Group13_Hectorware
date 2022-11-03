@@ -1,6 +1,6 @@
 package com.Hectorware.stepDefinitions;
 
-import com.Hectorware.pages.FilePageMuh;
+import com.Hectorware.pages.UploadFilePage;
 import com.Hectorware.pages.LoginPageHalim;
 import com.Hectorware.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -8,9 +8,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class FileMuh_StepDefs {
+public class UploadFile_StepDefs {
 
-    FilePageMuh file = new FilePageMuh();
+    UploadFilePage file = new UploadFilePage();
     LoginPageHalim login = new LoginPageHalim();
 
     @Given("user is on the home page")

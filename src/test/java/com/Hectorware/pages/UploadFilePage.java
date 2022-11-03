@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FilePageMuh {
+public class UploadFilePage {
 
-    public FilePageMuh()
+    public UploadFilePage()
     { PageFactory.initElements(Driver.getDriver(), this); }
 
     @FindBy(xpath = "//a[@class='active'][1]")
