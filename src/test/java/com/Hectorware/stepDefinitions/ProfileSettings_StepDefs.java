@@ -2,7 +2,6 @@ package com.Hectorware.stepDefinitions;
 
 import com.Hectorware.pages.LoginPageHalim;
 import com.Hectorware.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,41 +26,9 @@ public class ProfileSettings_StepDefs {
 
     }
 
-    @FindBy(id = "expand")
-    public WebElement MenuToggle;
+    @Then("user opens the Settings Page and can see the Personal Information")
+    public void the_user_goes_to_settings_page() {
+        Driver.getDriver().get("https://qa.hectorware.com/index.php/settings/user");
 
-    @When("User clicks on profile the dropdown is displayed")
-    public void user_clicks_on_profile() {
-        this.MenuToggle.click();
     }
-
-    @FindBy(id = "settings")
-    public WebElement Settings;
-
-    @And("clicking on Settings displays the profile")
-    public void user_clicks_on_settings() {
-        this.Settings.click();
-    }
-
-    @FindBy(id = "displayname")
-    public WebElement DisplayName;
-    @FindBy(id = "phone")
-    public WebElement PhoneNumber;
-    @FindBy(id = "email")
-    public WebElement Email;
-    @FindBy(id = "address")
-    public WebElement Address;
-
-    @Then("User can edit the profile of the account")
-    public void user_can_see_personal_information() {
-        this.DisplayName.click();
-        this.DisplayName.sendKeys("Salih Akyilmaz");
-        this.PhoneNumber.click();
-        this.PhoneNumber.sendKeys("+43123456789");
-        this.Email.click();
-        this.Email.sendKeys("salihTestCase@Cydeo.com");
-        this.Address.click();
-        this.Address.sendKeys("Burger King next to the park");
-    }
-
 }
