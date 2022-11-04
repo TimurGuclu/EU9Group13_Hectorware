@@ -10,12 +10,21 @@ public class FilesPageKaisar {
     { PageFactory.initElements(Driver.getDriver(), this); }
 
     @FindBy(partialLinkText = "files")
-    public WebElement fileIcon;
+    public WebElement filesButton;
 
     @FindBy(xpath = "//span[@class='icon icon-add']")
-    public WebElement plusIcon;
+    public WebElement plusButton;
 
     @FindBy(xpath = "//div[@class='newFileMenu popovermenu bubble menu open menu-left']")
-    public WebElement dropDownList;
+    public WebElement dropDownMenu;
+
+    @FindBy(xpath = "//label[@class='menuitem']")
+    public WebElement uploadButton;
+
+    public String filePath = "C:\\Users\\StormBreaker\\Desktop\\file.txt";
+
+
+
+
 
 }
