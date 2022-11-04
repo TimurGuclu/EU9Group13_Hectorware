@@ -1,8 +1,13 @@
 package com.Hectorware.stepDefinitions;
 
 import com.Hectorware.pages.LoginPageHalim;
+import com.Hectorware.pages.NotesPage;
+import com.Hectorware.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NoteFunctionStepDefinitions {
 
@@ -15,20 +20,24 @@ public class NoteFunctionStepDefinitions {
         login.password.sendKeys("Employee123");
     }
 
+    NotesPage notesPage = new NotesPage();
+
     @When("user clicks notes icon")
     public void user_clicks_notes_icon() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        notesPage.notesIcon.click();
     }
     @When("user clicks new note icon")
     public void user_clicks_new_note_icon() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        notesPage.newNoteIcon.click();
     }
     @Then("user should verify writeable  field is displayed")
     public void user_should_verify_writeable_field_is_displayed() {
 
-        System.out.println("hello world");
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+        wait.until(ExpectedConditions.visibilityOf(notesPage.codeMirror));
+
+        Assert.assertTrue( notesPage.codeMirror.isDisplayed());
     }
+
 
 }
