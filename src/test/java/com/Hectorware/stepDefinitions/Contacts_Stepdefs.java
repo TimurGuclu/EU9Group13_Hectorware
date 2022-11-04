@@ -2,6 +2,7 @@ package com.Hectorware.stepDefinitions;
 
 import com.Hectorware.pages.ContactsPage;
 import com.Hectorware.pages.LoginPageHalim;
+import com.Hectorware.utilities.ConfigurationReader;
 import com.Hectorware.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,11 +17,8 @@ public class Contacts_Stepdefs {
 
     @Given("the user navigates to the url")
     public void the_user_navigates_to_the_url() {
-        Driver.getDriver().get("https://qa.hectorware.com/index.php/login");
-        login.username.sendKeys("Employee55");
-        //login.password.click();
-        login.password.sendKeys("Employee123");
-        login.LoginButton.click();
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        login.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
     }
 
 
