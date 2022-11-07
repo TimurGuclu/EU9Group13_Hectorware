@@ -1,4 +1,4 @@
-Feature: Default
+Feature: Contacts
 	@wip
 	#US: 
 	#
