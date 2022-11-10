@@ -40,11 +40,16 @@ public class CalendarFunction {
     }
     @Then("the user verify calendar module is displayed")
     public void the_user_verify_calendar_module_is_displayed() {
-        String expectedTitle = "Files - Hectorware - QA";
+        String expectedTitle = "Week 45 of 2022 - Calendar - Hectorware - QA";
         String actualTitle = Driver.getDriver().getTitle();
         System.out.println("actualTitle = " + actualTitle);
 
         Assert.assertEquals(actualTitle, expectedTitle);
 
+    }
+
+    @Then("the user should be able to click on calendar button")
+    public void theUserShouldBeAbleToClickOnCalendarButton() {
+        calendarFunctionPage.module.click();
     }
 }

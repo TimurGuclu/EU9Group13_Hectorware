@@ -9,5 +9,15 @@ Feature: Default
 	@HECW-397
 	Scenario: user can see the calendar module 
 		Given the user navigate to calendar homepage 
-		When the user should see the calendar module 
+		And the user should see the calendar module
+		Then the user should be able to click on calendar button
 		Then the user verify calendar module is displayed
+
+	@HECW-397
+		Scenario: user can change the calendar view
+			Given the user should see the dropdown option next to Today button
+			When the user should be able to click on dropdown option
+			And the user should be able to click on Day
+		    And the user should be able to click on Week button
+		    And the user should click on Month button
+			Then the user should verify screen has changed

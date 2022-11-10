@@ -15,10 +15,24 @@ public class CalendarFunctionPage {
         { PageFactory.initElements(Driver.getDriver(), this); }
 
 
-
-
         @FindBy(xpath ="//ul[@class='inverted']/li[7]")
                 public WebElement module;
+
+
+        // @FindBy(xpath = "//*[@id=\"menu-lmarg\"]/li[2]/button/span[2]")
+         //public WebElement DropDown;
+
+       @FindBy(xpath = "//button[@aria-label='Actions']")
+       public WebElement DropDown;
+
+         @FindBy(xpath = "//*[text()='Day']")
+          public WebElement DayBtn;
+
+         @FindBy(xpath = "//*[text()='Week']")
+         public WebElement WeekBtn;
+
+        @FindBy(xpath = "//*[text()='Month']")
+        public WebElement MonthBtn;
 
 
 
