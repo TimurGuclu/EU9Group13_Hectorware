@@ -31,5 +31,17 @@ public class LoginTimur_StepDef {
         Assert.assertEquals(expectedTitle,actualTitle);
 
     }
+    @When("user enters invalid password")
+    public void user_enters_invalid_password() {
+        loginPageTimur.password.sendKeys("Employee124");
+    }
+    @Then("any user should verify error message")
+    public void any_user_should_verify_error_message() {
+        loginPageTimur.errorMsg.isDisplayed();
+        String actualTitle = Driver.getDriver().getTitle();
+        String expectedTitle= "Hectorware - QA";
+        Assert.assertEquals(expectedTitle,actualTitle);
+    }
+
 
 }

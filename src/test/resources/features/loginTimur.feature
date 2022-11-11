@@ -7,7 +7,7 @@ Feature: Login feature
     And user enters valid password
     And user clicks on login button
     Then any user should verify the home page
-
+  @Timur2
     Scenario: Login with invalid credentials
       Given user navigates to the URL
       When user enters valid username

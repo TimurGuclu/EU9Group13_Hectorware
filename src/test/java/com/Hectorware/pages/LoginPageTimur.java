@@ -17,6 +17,9 @@ public class LoginPageTimur {
     @FindBy(xpath = "//*[@id='submit-form']")
     public WebElement loginBtn;
 
+    @FindBy(xpath = "//*[@id='body-login']/div[1]/div/main/div/div/form/fieldset/p[3]")
+    public WebElement  errorMsg;
+
 
 
 
