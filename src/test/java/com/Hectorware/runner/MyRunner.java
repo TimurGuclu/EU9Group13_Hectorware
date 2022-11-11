@@ -8,15 +8,15 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "json:target/cucumber.json",
-                "pretty",
+//                "pretty",
                 "html:target/cucumber-report.html",
-                "rerun:target/rerun.txt",
+                "rerun:target/rerun.txt"
 //                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
         },
         features = "src/test/resources/features",
         glue = "com/Hectorware/stepDefinitions",
         dryRun = true,
-        tags = "@Ismail"      // unique tag names, leave blank
+        tags = ""      // unique tag names, leave blank
         //publish = false
 
 )
