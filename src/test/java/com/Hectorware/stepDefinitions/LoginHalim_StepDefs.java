@@ -14,13 +14,13 @@ public class LoginHalim_StepDefs {
         Driver.getDriver().get("https://qa.hectorware.com/index.php/login");
     }
 
-    @When("user enters valid credentials")
+   /* @When("user enters valid credentials")
     public void user_enters_valid_credentials() {
        //login.username.click();
        login.username.sendKeys("Employee1");
        //login.password.click();
        login.password.sendKeys("Employee123");
-    }
+    }*/
 
     @Then("user should verify the home page")
     public void user_should_verify_the_home_page() {

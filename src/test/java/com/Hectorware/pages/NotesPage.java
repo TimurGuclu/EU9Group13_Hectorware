@@ -11,11 +11,14 @@ public class NotesPage {
     public NotesPage(){PageFactory.initElements(Driver.getDriver(), this); }
 
 
-    @FindBy(id = "user")
-    public WebElement username;
+    @FindBy(xpath = "//*[@id=\"appmenu\"]/li[8]/a")
+    public WebElement notesIcon;
 
+    @FindBy(id = "notes_new_note")
+    public WebElement newNoteIcon;
 
-
+    @FindBy(className = "CodeMirror-line")
+    public WebElement codeMirror;
 
 
 
