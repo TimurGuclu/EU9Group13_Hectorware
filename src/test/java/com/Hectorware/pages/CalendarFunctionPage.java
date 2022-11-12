@@ -14,25 +14,22 @@ public class CalendarFunctionPage {
  public CalendarFunctionPage()
         { PageFactory.initElements(Driver.getDriver(), this); }
 
+    // calendar tryout items
+    @FindBy(xpath = "//a[@aria-label='Calendar']")
+    public WebElement calendarButton;
 
-        @FindBy(xpath ="//ul[@class='inverted']/li[7]")
-                public WebElement module;
+    @FindBy(xpath = "//button[@aria-label='Actions']")
+    public WebElement viewDropdownOptions;
 
+    @FindBy(xpath = "//span[@class='action-button__icon icon-view-day']")
+    public WebElement DayBtn;
 
-        // @FindBy(xpath = "//*[@id=\"menu-lmarg\"]/li[2]/button/span[2]")
-         //public WebElement DropDown;
+    @FindBy(xpath = "//span[@class='action-button__icon icon-view-week']")
+    public WebElement WeekBtn;
 
-       @FindBy(xpath = "//button[@aria-label='Actions']")
-       public WebElement DropDown;
+    @FindBy(xpath = "//span[@class='action-button__icon icon-view-module']")
+    public WebElement MonthBtn;
 
-         @FindBy(xpath = "//*[text()='Day']")
-          public WebElement DayBtn;
-
-         @FindBy(xpath = "//*[text()='Week']")
-         public WebElement WeekBtn;
-
-        @FindBy(xpath = "//*[text()='Month']")
-        public WebElement MonthBtn;
 
 
 
