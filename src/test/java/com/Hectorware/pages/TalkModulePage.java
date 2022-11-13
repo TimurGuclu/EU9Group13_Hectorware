@@ -32,9 +32,8 @@ public class TalkModulePage {
     @FindBy (xpath = "(//div[@class='navigation']//button)[2]")
     public WebElement createConversationButton;
 
-    @FindBy (xpath = "//a[@aria-label='Conversation, avengersConversation']")
-    public WebElement avengersConversation;
-
+    @FindBy (xpath = "//div[@class='acli__content__line-one']//span")
+    public WebElement conversationName;
 
 
 
