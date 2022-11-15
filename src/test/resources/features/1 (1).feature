@@ -13,7 +13,7 @@ Feature: Default
 		Then the user should be able to click on calendar button
 		Then the user verify calendar module is displayed
 
-	@HECW-397
+
 	Scenario: Display calendar view options
 		When the user logins with valid credentials
 		And user click on Calendar menu button
@@ -22,3 +22,15 @@ Feature: Default
 		And click on week option
 		And click on month option
 		Then user verify screen view changed
+
+
+	@HECW-397
+	Scenario: User can create a new event in Calendar
+		When User can click on the Calendar module
+		And User can click + New event button
+		And User can enter Event title
+		And User can pick start day, month, year and time of event
+		And User can pick a time zone
+		And User can pick end day, month, year and time of event
+		And User can pick a time zone
+		Then User can click on Save button

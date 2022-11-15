@@ -61,7 +61,65 @@ public class CalendarChanges {
 
 
     }
+
+
+
+      // create new event
+
+
+    @When("User can click on the Calendar module")
+    public void user_can_click_on_the_calendar_module()throws InterruptedException {
+        Driver.getDriver().get("https://qa.hectorware.com/index.php/login");
+        login.username.sendKeys("Employee12");
+        login.password.sendKeys("Employee123");
+        login.LoginButton.click();
+        calendarFunctionPage.calendarButton.click();
+        Thread.sleep(3000);
+    }
+    @When("User can click + New event button")
+    public void user_can_click_new_event_button() {
+        calendarFunctionPage.NewEventBtn.click();
+
+    }
+    @When("User can enter Event title")
+    public void user_can_enter_event_title()throws InterruptedException {
+        calendarFunctionPage.EventTitleBtn.sendKeys("SDET summit 2022");
+        Thread.sleep(3000);
+
+
+
+    }
+    @When("User can pick start day, month, year and time of event")
+    public void user_can_pick_start_day_month_year_and_time_of_event()throws InterruptedException {
+        calendarFunctionPage.DateTimeBox.click();
+        calendarFunctionPage.DateBtn.isDisplayed();
+        calendarFunctionPage.TimeBtn.isDisplayed();
+        Thread.sleep(3000);
+
+
+
+
+    }
+    @When("User can pick a time zone")
+    public void user_can_pick_a_time_zone()throws InterruptedException {
+        calendarFunctionPage.TimeZoneBtn.click();
+        calendarFunctionPage.ZoneTime.isDisplayed();
+        calendarFunctionPage.Location.isDisplayed();
+        Thread.sleep(300);
+
+
+
+    }
+    @When("User can pick end day, month, year and time of event")
+    public void user_can_pick_end_day_month_year_and_time_of_event() {
+
+    }
+    @Then("User can click on Save button")
+    public void user_can_click_on_save_button() {
+
+    }
 }
+
 
 
 
