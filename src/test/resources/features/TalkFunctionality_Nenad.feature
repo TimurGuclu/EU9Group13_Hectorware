@@ -18,8 +18,8 @@ Feature: Talk Functionality
 		Given user is successfully logged in on Hectorware dashboard
 		When user clicks on Talk functionality button
 		And user clicks on plus sign to create new conversation
-		And user enters "avengersConversation"
+		And user enters "string"
 		And user clicks on AddParticipants button
 		And user selects participants he or she wants to add
 		And user clicks Create conversation button
-		Then verify "avengersConversation" is created under the talk module
+		Then verify "string" is created under the talk module

@@ -3,13 +3,21 @@ package com.Hectorware.stepDefinitions;
 import com.Hectorware.pages.BasePage;
 import com.Hectorware.pages.LoginPageHalim;
 import com.Hectorware.pages.TalkModulePage;
+import com.Hectorware.utilities.BrowserUtils;
 import com.Hectorware.utilities.Driver;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TalkFunctionality_StepDefinitions {
+
+    Faker faker = new Faker();
+
+    String convName = (faker.superhero().name()) + " Conversation";
 
     LoginPageHalim loginPageHalim = new LoginPageHalim();
 
@@ -48,6 +56,8 @@ public class TalkFunctionality_StepDefinitions {
     @When("user enters {string}")
     public void user_enters(String string) {
 
+        string = convName;
+
         talkModulePage.inputBox.sendKeys(string);
 
     }
@@ -73,7 +83,12 @@ public class TalkFunctionality_StepDefinitions {
     @Then("verify {string} is created under the talk module")
     public void verify_new_conversation_is_created_under_the_talk_module(String string) {
 
+        string = convName;
 
-        Assert.assertTrue(talkModulePage.avengersConversation.isDisplayed());
+        BrowserUtils.sleep(5);
+
+
+        Assert.assertTrue(talkModulePage.conversationName.getText().equals(string));
+
     }
 }
