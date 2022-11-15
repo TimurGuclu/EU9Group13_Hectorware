@@ -6,6 +6,7 @@ import com.Hectorware.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 
 public class LoginTimur_StepDef {
 
@@ -23,6 +24,30 @@ public class LoginTimur_StepDef {
     public void user_clicks_on_login_button() {
     loginPageTimur.loginBtn.click();
     }
+    @When("user enters invalid username")
+    public void user_enters_invalid_username() {
+    loginPageTimur.username.sendKeys("Employee301");
+    }
+    @When("user keeps username blank")
+    public void user_keeps_username_blank() {
+    loginPageTimur.username.sendKeys("");
+    }
+    @When("user keeps password blank")
+    public void user_keeps_password_blank() {
+    loginPageTimur.password.sendKeys("");
+    }
+    @Then("any user should verify please fill out this field message")
+    public void any_user_should_verify_please_fill_out_this_field_message() {
+        String validationMsg = loginPageTimur.username.getAttribute("validationMessage");
+        System.out.println("validationMsg = " + validationMsg);
+        Assert.assertEquals("Lütfen bu alanı doldurun.",validationMsg);
+
+
+    }
+
+
+
+
     @Then("any user should verify the home page")
     public void any_user_should_verify_the_home_page() {
 
@@ -44,4 +69,11 @@ public class LoginTimur_StepDef {
     }
 
 
+    @Then("any user should verify please fill out this field message on password space")
+    public void anyUserShouldVerifyPleaseFillOutThisFieldMessageOnPasswordSpace() {
+        String validationMsgPsw = loginPageTimur.password.getAttribute("validationMessage");
+        System.out.println("validationMsgPsw = " + validationMsgPsw);
+        Assert.assertEquals("Lütfen bu alanı doldurun.",validationMsgPsw);
+
+    }
 }
