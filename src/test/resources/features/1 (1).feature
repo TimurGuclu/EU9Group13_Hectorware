@@ -32,5 +32,5 @@ Feature: Default
 		And User can pick start day, month, year and time of event
 		And User can pick a time zone
 		And User can pick end day, month, year and time of event
-		And User can pick a time zone
+		And User can pick a end time zone
 		Then User can click on Save button

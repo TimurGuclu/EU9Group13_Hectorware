@@ -46,14 +46,38 @@ public class CalendarFunctionPage {
     @FindBy(xpath = "//td[@title='2022-11-14']")
     public WebElement TimeBtn;
 
-    @FindBy(xpath = "//button[@class = 'datetime-picker-inline-icon icon icon-timezone']\n")
+    @FindBy(xpath = "//button[@class = 'datetime-picker-inline-icon icon icon-timezone']")
     public WebElement TimeZoneBtn;
 
     @FindBy(xpath =  "//div[@class='multiselect timezone-popover-wrapper__timezone-select multiselect--above multiselect--single']")
     public WebElement ZoneTime;
 
-    @FindBy(xpath = "//span[text() = 'Europe - Madrid']")
-    public WebElement Location;
+    @FindBy(xpath = "(//input[@placeholder='Type to search timezone'])[2]")
+    public WebElement location;
+
+    @FindBy(xpath =  "//div[@class='mx-datepicker'][2]")
+    public WebElement dayMonthYearEnd;
+
+    @FindBy(xpath = "//table[@class='mx-table mx-table-date']//tr[3]/td[4]")
+    public WebElement dateOfEventEnd;
+
+    @FindBy(xpath = "(//button[@class = 'datetime-picker-inline-icon icon icon-timezone'])[2]")
+    public WebElement endTimeZone;
+
+
+    @FindBy(xpath = "(//div[@class='multiselect timezone-popover-wrapper__timezone-select multiselect--above multiselect--single'])[2]")
+    public WebElement timeZonePickerEnd;
+
+
+
+    @FindBy(xpath = "(//input[@placeholder='Type to search timezone'])[3]")
+    public WebElement locationEnd;
+
+
+    @FindBy(xpath = "//div[@class = 'event-popover__buttons']")
+    public WebElement saveButton;
+
+
 
 
 

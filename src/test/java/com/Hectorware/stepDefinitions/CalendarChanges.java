@@ -3,9 +3,11 @@ package com.Hectorware.stepDefinitions;
 import com.Hectorware.pages.CalendarFunctionPage;
 import com.Hectorware.pages.LoginPageHalim;
 import com.Hectorware.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class CalendarChanges {
 
@@ -30,6 +32,7 @@ public class CalendarChanges {
     @When("user click on view options button")
     public void user_click_on_view_options_button() {
         calendarFunctionPage.viewDropdownOptions.click();
+
 
     }
 
@@ -103,19 +106,35 @@ public class CalendarChanges {
     @When("User can pick a time zone")
     public void user_can_pick_a_time_zone()throws InterruptedException {
         calendarFunctionPage.TimeZoneBtn.click();
-        calendarFunctionPage.ZoneTime.isDisplayed();
-        calendarFunctionPage.Location.isDisplayed();
-        Thread.sleep(300);
+        calendarFunctionPage.ZoneTime.click();
+        calendarFunctionPage.location.sendKeys("Madrid");
+        calendarFunctionPage.location.sendKeys(Keys.ENTER);
 
 
 
     }
     @When("User can pick end day, month, year and time of event")
-    public void user_can_pick_end_day_month_year_and_time_of_event() {
+    public void user_can_pick_end_day_month_year_and_time_of_event() throws InterruptedException{
+        calendarFunctionPage.dayMonthYearEnd.click();
+        calendarFunctionPage.dateOfEventEnd.isDisplayed();
+        Thread.sleep(3000);
 
     }
+
+    @And("User can pick a end time zone")
+    public void userCanPickAEndTimeZone()throws  InterruptedException{
+        calendarFunctionPage.endTimeZone.click();
+        calendarFunctionPage.timeZonePickerEnd.click();
+        calendarFunctionPage.locationEnd.sendKeys("Moscow");
+        calendarFunctionPage.locationEnd.sendKeys(Keys.ENTER);
+        Thread.sleep(3000);
+    }
+
+
+
     @Then("User can click on Save button")
     public void user_can_click_on_save_button() {
+        calendarFunctionPage.saveButton.click();
 
     }
 }
