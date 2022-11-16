@@ -2,10 +2,15 @@ package com.Hectorware.stepDefinitions;
 
 import com.Hectorware.pages.CalendarFunctionality;
 import com.Hectorware.pages.LoginPageHalim;
+import com.Hectorware.utilities.BrowserUtils;
 import com.Hectorware.utilities.Driver;
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.commons.lang3.NotImplementedException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -115,6 +120,66 @@ public class CalendarFunctionality_StepDef {
     @Then("user should see weekly view on calendar page")
     public void user_should_see_weekly_view_on_calendar_page() {
 
+    }
+
+
+    //New event Calendar
+    @When("User can click on the Calendar module")
+    public void user_can_click_on_the_calendar_module() {
+        Driver.getDriver().get("https://qa.hectorware.com/index.php/login");
+        calendarFunctionality.username.sendKeys("Employee8");
+        calendarFunctionality.password.sendKeys("Employee123");
+        calendarFunctionality.logInButton.click();
+        calendarFunctionality.calendarButton.click();
+        BrowserUtils.waitFor(2);
+    }
+
+    @When("User can click + New event button")
+    public void user_can_click_new_event_button() {
+        calendarFunctionality.newEventButton.click();
+    }
+
+    @When("User can enter Event title")
+    public void user_can_enter_event_title() {
+       calendarFunctionality.eventTitle.sendKeys("SDET Summit 2022");
+    }
+
+    @When("User can pick start day, month, year and time of event")
+    public void user_can_pick_start_day_month_year_and_time_of_event() throws InterruptedException {
+        calendarFunctionality.dayMonthYear.click();
+        calendarFunctionality.dateOfEvent.isDisplayed();
+        Thread.sleep(3000);
+    }
+
+    @When("User can pick a start time zone")
+    public void userCanPickAStartTimeZone() throws InterruptedException {
+        calendarFunctionality.timeZone.click();
+        calendarFunctionality.timeZonePicker.click();
+        calendarFunctionality.location.sendKeys("Madrid");
+        calendarFunctionality.location.sendKeys(Keys.ENTER);
+
+        Thread.sleep(3000);
+    }
+
+    @When("User can pick end day, month, year and time of event")
+    public void user_can_pick_end_day_month_year_and_time_of_event() throws InterruptedException {
+        calendarFunctionality.dayMonthYearEnd.click();
+        calendarFunctionality.dateOfEventEnd.isDisplayed();
+        BrowserUtils.waitFor(3);
+    }
+
+    @When("User can pick a end time zone")
+    public void userCanPickAEndTimeZone(){
+        calendarFunctionality.timeZoneEnd.click();
+        calendarFunctionality.timeZonePickerEnd.click();
+        calendarFunctionality.locationEnd.sendKeys("Moscow");
+        calendarFunctionality.locationEnd.sendKeys(Keys.ENTER);
+
+    }
+
+    @Then("User can click on Save button")
+    public void user_can_click_on_save_button() {
+        calendarFunctionality.saveButton.click();
     }
 
 
