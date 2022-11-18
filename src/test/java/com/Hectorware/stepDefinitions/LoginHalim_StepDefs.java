@@ -4,6 +4,7 @@ import com.Hectorware.pages.LoginPageHalim;
 import com.Hectorware.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class LoginHalim_StepDefs {
 
@@ -32,5 +33,40 @@ public class LoginHalim_StepDefs {
 
         Assert.assertEquals(actualTitle, expectedTitle);
     }
+
+    @When("user click on Calendar menu button")
+    public void user_click_on_calendar_menu_button() {
+        login.calendarButton.click();
+    }
+
+    @When("user click on view options button")
+    public void user_click_on_view_options_button() {
+        login.viewOptions.click();
+    }
+    @When("click on week option")
+    public void click_on_week_option() throws InterruptedException {
+        login.viewDropdownWeek.click();
+        Thread.sleep(3000);
+
+    }
+    @Then("user should see weekly view on calendar page")
+    public void user_should_see_weekly_view_on_calendar_page() {
+
+    }
+
+    @Given("user enters {string} and {string}")
+    public void user_enters_and(String username, String password) {
+        login.login(username, password);
+    }
+
+    @Then("user should verify the error message")
+    public void user_should_verify_the_error_message() {
+        String actualTitle = Driver.getDriver().getTitle();
+        System.out.println("title = " + actualTitle);
+        Assert.assertEquals("Not login due to invalid-blank credentials", "Hectorware - QA", actualTitle);
+
+    }
+
+
 
 }
