@@ -61,9 +61,23 @@ public class LoginHalim_StepDefs {
 
     @Then("user should verify the error message")
     public void user_should_verify_the_error_message() {
+        // 1st way
         String actualTitle = Driver.getDriver().getTitle();
         System.out.println("title = " + actualTitle);
         Assert.assertEquals("Not login due to invalid-blank credentials", "Hectorware - QA", actualTitle);
+
+        // 2nd way
+        if (login.username.equals("")){
+            String validationMessage = login.username.getAttribute("validationMessage");
+            System.out.println("validationMessage = " + validationMessage);
+            Assert.assertEquals("Fill out message is displayed test","Please fill out this field.",validationMessage);
+        }else if(login.password.equals("")){
+            String validationMessage = login.password.getAttribute("validationMessage");
+            System.out.println("validationMessage = " + validationMessage);
+            Assert.assertEquals("Fill out message is displayed test","Please fill out this field.",validationMessage);
+        }
+
+
 
     }
 
