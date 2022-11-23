@@ -17,8 +17,31 @@ public class NotesPage {
     @FindBy(id = "notes_new_note")
     public WebElement newNoteIcon;
 
-    @FindBy(className = "CodeMirror-line")
+    @FindBy(xpath = "//*[@id=\"note-container\"]/div/div[2]/div/div[1]/div[6]/div[1]/div/div/div/div[5]/pre")
     public WebElement codeMirror;
+
+    @FindBy(xpath = "//*[@id=\"note-container\"]/div/div[2]/div/div[1]/div[6]/div[1]/div/div/div/div[5]/pre/span")
+    public WebElement editibleCodeMirror;
+
+    @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[4]/a/span")
+    public WebElement todayIsSunny;
+
+    @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[4]/div/div/div/div/button")
+    public WebElement threeDot;
+
+    @FindBy(xpath = "//span[@class='action-button__text']")
+    public WebElement rename;
+
+    @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[4]/div/form/input")
+    public WebElement input;
+
+    @FindBy(xpath = "//button[@class='icon-confirm']")
+    public WebElement arrow;
+
+    @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[4]/a/span")
+    public WebElement firstPage;
+
+
 
 
 
