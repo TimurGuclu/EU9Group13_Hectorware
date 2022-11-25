@@ -24,7 +24,7 @@ Feature: Default
 		Then user verify screen view changed
 
 
-	@HECW-397
+
 	Scenario: User can create a new event in Calendar
 		When User can click on the Calendar module
 		And User can click + New event button
@@ -34,3 +34,14 @@ Feature: Default
 		And User can pick end day, month, year and time of event
 		And User can pick a end time zone
 		Then User can click on Save button
+	@HECW-397
+	Scenario: User can update any event
+		Given user updates created event
+		When User click on any event
+		And User can click on More button
+		And User can change event title
+		And User can add a location
+		And User can add a description
+		And User can click od Reminders button
+		And User can add a reminder
+		Then User can save updates

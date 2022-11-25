@@ -77,6 +77,36 @@ public class CalendarFunctionPage {
     @FindBy(xpath = "//div[@class = 'event-popover__buttons']")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//div[@class = 'fc-event-time']")
+    public WebElement clickOnEvent;
+
+    @FindBy(xpath = "//div[@class='event-popover__buttons']/button")
+    public WebElement moreButton;
+
+    @FindBy(xpath = "//input[@placeholder = 'Event title']")
+    public WebElement eventTitleChanger;
+
+    @FindBy(xpath = "//div[@class='property-text__input']/textarea")
+    public WebElement LocationBtn;
+
+
+    @FindBy(xpath = "//textarea[@placeholder='Add a description']")
+    public WebElement descriptionBtn;
+
+    @FindBy(xpath = "//span[@class='app-sidebar-tabs__tab-icon icon-reminder']")
+    public WebElement reminderBtn;
+
+    @FindBy(xpath = "(//span[@class='multiselect__placeholder'])[3]")
+    public WebElement AddReminderBtn;
+
+    @FindBy(xpath = "//div[@title='an hour before the event starts']")
+    public WebElement OneHourBeforeBtn;
+
+    @FindBy(xpath = "(//button[@class='primary'])[3]")
+    public WebElement UpdateBtn;
+
+
+
 
 
 
