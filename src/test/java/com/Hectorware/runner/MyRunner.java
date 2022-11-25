@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/Hectorware/stepDefinitions",
         dryRun = false,
-        tags = ""      // unique tag names, leave blank
+        tags = "@halim"      // unique tag names, leave blank
         //publish = false
 
 )

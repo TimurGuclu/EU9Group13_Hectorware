@@ -20,6 +20,8 @@ public class LoginPageHalim {
     @FindBy(id = "submit-form")
     public WebElement LoginButton;
 
+
+
     public void login (String username, String password){
 
         this.username.sendKeys(username);
@@ -27,5 +29,15 @@ public class LoginPageHalim {
         this.LoginButton.click();
 
     }
+
+    // calendar tryout items
+    @FindBy(xpath = "//a[@aria-label='Calendar']")
+    public WebElement calendarButton;
+
+    @FindBy(xpath = "//button[@aria-label='Actions']")
+    public WebElement viewOptions;
+
+    @FindBy(xpath = "//span[@class='action-button__icon icon-view-week']")
+    public WebElement viewDropdownWeek;
 
 }
