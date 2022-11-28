@@ -51,4 +51,16 @@ Feature: Default
 		And User can pick a end time zone
 		Then User can click on Save button
 
+	@HECW-439
+	Scenario: User can update any event
+		Given User updates created event
+		When User click on any event
+		And User can click on More button
+		And User can change event title
+		And User can add location
+		And User can add a description
+		And User can click on Reminders button
+		And User can add a reminder
+		Then User can save updates
+
 

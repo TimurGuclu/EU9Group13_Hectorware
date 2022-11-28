@@ -184,6 +184,63 @@ public class CalendarFunctionality_StepDef {
 
 
 
+    //event updates
+
+    @Given("User updates created event")
+    public void userUpdatesCreatedEvent() {
+        Driver.getDriver().get("https://qa.hectorware.com/index.php/login");
+        calendarFunctionality.username.sendKeys("Employee8");
+        calendarFunctionality.password.sendKeys("Employee123");
+        calendarFunctionality.logInButton.click();
+        calendarFunctionality.calendarButton.click();
+    }
+
+    @When("User click on any event")
+    public void user_click_on_any_event() {
+        calendarFunctionality.clickOnEvent.click();
+        BrowserUtils.waitFor(3);
+    }
+
+
+    @When("User can click on More button")
+    public void user_can_click_on_more_button() {
+        calendarFunctionality.moreButton.click();
+    }
+
+    @When("User can change event title")
+    public void user_can_change_event_title() {
+        calendarFunctionality.eventTitleChanger.sendKeys(" IT");
+    }
+
+    @When("User can add location")
+    public void user_can_add_location() {
+        calendarFunctionality.locationButton.sendKeys("Madrid West");
+    }
+
+    @When("User can add a description")
+    public void user_can_add_a_description() {
+        calendarFunctionality.descriptionButton.sendKeys("New location added!");
+    }
+
+    @When("User can click on Reminders button")
+    public void user_can_click_on_reminders_button() {
+        calendarFunctionality.reminderButton.click();
+    }
+
+    @When("User can add a reminder")
+    public void user_can_add_a_reminder() {
+        calendarFunctionality.addReminder.click();
+        calendarFunctionality.oneHourBefore.click();
+    }
+
+    @Then("User can save updates")
+    public void user_can_save_updates() {
+        calendarFunctionality.update.click();
+    }
+
+
+
+
 
 
 
@@ -248,4 +305,11 @@ public class CalendarFunctionality_StepDef {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
+    @And("User can pick between When shared show full event\\/-show only busy\\/-hide this event")
+    public void userCanPickBetweenWhenSharedShowFullEventShowOnlyBusyHideThisEvent() {
+    }
+
+
+
 }

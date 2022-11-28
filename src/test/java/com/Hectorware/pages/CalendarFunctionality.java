@@ -90,4 +90,39 @@ public class CalendarFunctionality {
     public WebElement saveButton;
 
 
+
+    //update event locators
+
+    @FindBy(xpath = "//div[@class = 'fc-event-time']")
+    public WebElement clickOnEvent;
+
+    @FindBy(xpath = "//div[@class='event-popover__buttons']/button")
+    public WebElement moreButton;
+
+    @FindBy(xpath = "//input[@placeholder = 'Event title']")
+    public WebElement eventTitleChanger;
+
+    @FindBy(xpath = " //div[@class='property-text__input']/textarea")
+    public WebElement locationButton;
+
+    @FindBy(xpath = " //textarea[@placeholder='Add a description']")
+    public WebElement descriptionButton;
+
+    @FindBy(xpath = "//span[@class='app-sidebar-tabs__tab-icon icon-reminder']")
+    public WebElement reminderButton;
+
+    @FindBy(xpath = "(//span[@class='multiselect__placeholder'])[3]")
+    public WebElement addReminder;
+
+    @FindBy(xpath = "//div[@title='an hour before the event starts']")
+    public WebElement oneHourBefore;
+
+    @FindBy(xpath = "(//button[@class='primary'])[3]")
+    public WebElement update;
+
+
+
+
+
+
 }
