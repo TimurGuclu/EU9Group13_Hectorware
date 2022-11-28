@@ -1,4 +1,4 @@
-
+@TimurTest
 Feature: Login feature
   @Timur
   Scenario: Login with valid credentials
@@ -8,14 +8,14 @@ Feature: Login feature
     And user clicks on login button
     Then any user should verify the home page
   @Timur2
-    Scenario: Login with invalid credentials
+    Scenario: Login with invalid password
       Given user navigates to the URL
       When user enters valid username
       And user enters invalid password
       And user clicks on login button
       Then any user should verify error message
   @Timur3
-    Scenario: Login with invalid credentials
+    Scenario: Login with invalid username
       Given user navigates to the URL
       When user enters invalid username
       And user enters valid password
@@ -42,3 +42,13 @@ Feature: Login feature
     And user keeps password blank
     And user clicks on login button
     Then any user should verify please fill out this field message on password space
+  @Timur7
+  Scenario Outline: Login - Negative Scenarios
+    Given user navigates to the URL
+    And user enters "<username>" , "<password>"
+    Then user should verify the displayed error message
+    Examples:
+      | username  | password    |
+      |           |             |
+      | Employee1 |             |
+      |           | Employee123 |

@@ -20,9 +20,13 @@ public class LoginPageTimur {
     @FindBy(xpath = "//*[@id='body-login']/div[1]/div/main/div/div/form/fieldset/p[3]")
     public WebElement  errorMsg;
 
+    public void login (String username, String password) {
+
+        this.username.sendKeys(username);
+        this.password.sendKeys(password);
+        this.loginBtn.click();
 
 
-
-
+    }
 
 }
