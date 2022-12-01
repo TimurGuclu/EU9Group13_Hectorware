@@ -1,6 +1,5 @@
 package com.Hectorware.pages;
 
-import com.Hectorware.stepDefinitions.Contacts_Stepdefs;
 import com.Hectorware.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,5 +25,8 @@ public class ContactsPage {
 
     @FindBy(xpath = "//*[@id=\"contacts-list\"]/div[1]//div//*[contains(text(), 'John Reese')]")
     public WebElement contactsList;
+
+    @FindBy ( xpath = "//input[@id = 'contact-org']")
+    public WebElement contactField;
 
 }
